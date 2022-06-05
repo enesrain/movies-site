@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Movies-Site</title>
+    <style>
+      * {
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      header nav {
+        height: 40px;
+        background-color: #112d4e;
+        color: #f9f7f7;
+        background-attachment: fixed;
+      }
+      header nav h3 {
+        display: inline;
+        position: relative;
+        left: 10%;
+        top: 8px;
+      }
+      header nav li {
+        display: inline;
+        position: relative;
+        right: -78%;
+        color: #f9f7f7;
+        top: -12px;
+        margin-left: 12px;
+        width: 30px;
+      }
+      header nav .li::before {
+        content: "- ";
+      }
+      header nav .li:hover {
+        border-bottom: 3px solid #f9f7f7;
+        transition-duration: 0.3s;
+      }
+      .header-button {
+        background-color: #f9f7f7;
+        color: #112d4e;
+
+        padding: 4px;
+      }
+      .header-button:hover {
+        color: #f9f7f7;
+        background-color: #112d4e;
+        border: 2px solid #f9f7f7;
+      }
+      /*---------------------------------------------------------------------*/
+      .header-image {
+        background-image: url(bg.jpeg);
+        width: 100%;
+        height: 80vh;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .header-writi {
+        background-color: #112d4e;
+        color: #f9f7f7;
+        display: inline-block;
+        width: 750px;
+        height: 140px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        opacity: 0.4;
+        font-weight: bold;
+        font-size: 24px;
+       
+        transform: translate(-50%, -50%);
+      }
+      .header-writi h2 {
+        position: relative;
+        top: 30px;
+        left: 5px;
+      }
+      .header-writi p {
+        position: relative;
+        top: 40px;
+        left: 15px;
+      }
+      .main-top {
+        background-color: #f9f7f7;
+        color: #112d4e;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      /*-------------------------------------------------------------------------------*/
+      .main-mid {
+        text-align: center;
+        color: #112d4e;
+      }
+      .main-bottom {
+        height: 250px;
+        margin-top: 70px;
+        text-align: center;
+      }
+      .main-bottom h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+      .main-bottom h2 {
+        margin-bottom: 15px;
+      }
+      .main-bottom1 {
+        display: inline-block;
+        width: 20%;
+        height: 250px;
+        text-align: center;
+        color: #112d4e;
+      }
+      .main-bottom2 {
+        display: inline-block;
+        width: 20%;
+        height: 250px;
+        text-align: center;
+        color: #112d4e;
+      }
+      .main-bottom3 {
+        display: inline-block;
+        width: 20%;
+        height: 250px;
+        text-align: center;
+        color: #112d4e;
+      }
+      /*-----------------------------------------------*/
+      .bottom-image {
+        width: 50%;
+        height: 250px;
+        display: inline-block;
+        background-image: url(movies.jpeg);
+        background-size: cover;
+        background-position: center;
+      }
+      .bottom-right {
+        width: 50%;
+        height: 250px;
+        float: right;
+        color: #112d4e;
+        display: inline-block;
+      }
+      .bottom-right h1 {
+        position: relative;
+        top: 30px;
+        left: 20px;
+      }
+      .bottom-right p {
+        margin-top: 40px;
+        margin-left: 20px;
+      }
+      .bottom-right a {
+        position: relative;
+        top: 25px;
+        left: 20px;
+        border: 2px solid #112d4e;
+        color: #112d4e;
+        text-decoration: none;
+        width: 50px;
+        height: 40px;
+      }
+      .bottom-right a:hover {
+        background-color: #112d4e;
+        color: #f9f7f7;
+      }
+
+      /*---------------------------------------------------------------*/
+      .footer-top {
+        height: 150px;
+        background-color: #112d4e;
+        color: #f9f7f7;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      .footer-top h1 {
+        display: inline-block;
+        width: 15px;
+        height: 20px;
+        text-align: center;
+      }
+      .left {
+        display: inline-block;
+        position: relative;
+        width: 32%;
+        text-align: center;
+      }
+      .middle {
+        display: inline-block;
+        position: relative;
+        width: 32%;
+        text-align: center;
+        padding-top: 40px;
+      }
+      .right {
+        display: inline-block;
+        position: relative;
+        width: 32%;
+        text-align: center;
+      }
+      /*--------------------------------------------------------------*/
+
+      .footer-bottom h1 {
+        display: inline-block;
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        color: #112d4e;
+      }
+      .footer-bottom-left {
+        display: inline-block;
+        height: 450px;
+        width: 250px;
+        float: left;
+        margin-left: 25%;
+        box-shadow: -5px -5px 5px 5px rgb(201, 198, 198);
+        position: relative;
+      }
+      .footer-bottom-left:hover {
+        transform: translateY(
+          -15px
+        ); /*y eksninde -15px geriye al yani 15px yukarı*/
+        transition-duration: 0.2s;
+      }
+      .footer-bottom-left-1 {
+        height: 250px;
+        background-image: url(interstaller.jpg);
+        background-size: cover;
+        background-position: right;
+      }
+      .footer-bottom-middle {
+        display: inline-block;
+        height: 450px;
+        width: 250px;
+        float: left;
+        margin-left: 10px;
+        position: relative;
+      }
+      .footer-bottom-middle:hover {
+        transform: translateY(-15px);
+        transition-duration: 0.2s;
+      }
+
+      .footer-bottom-middle-1 {
+        height: 250px;
+        background-image: url(prestij.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .footer-bottom-right {
+        display: inline-block;
+        height: 450px;
+        width: 250px;
+        float: left;
+        margin-left: 10px;
+        box-shadow: 5px -5px 5px 5px rgb(201, 198, 198);
+        position: relative;
+      }
+      .footer-bottom-right:hover {
+        transform: translateY(-15px);
+        transition-duration: 0.2s;
+      }
+      .footer-bottom-right-1 {
+        height: 250px;
+        background-image: url(seinfield.jpg);
+        background-size: cover;
+        background-position: right;
+      }
+      .footer-bottom h2 {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        color: #112d4e;
+      }
+      .footer-bottom p {
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        color: #112d4e;
+      }
+      .footer-bottom .button {
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        background-color: #112d4e;
+        color: white;
+        padding: 5px;
+        border: none;
+      }
+      .footer-bottom .button:hover {
+        background-color: white;
+        color: #112d4e;
+        border: 2px solid #112d4e;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h3>Movieapp</h3>
+        <ul>
+          <li class="li">Movies</li>
+          <li class="li">Series</li>
+          <li class="header-button">Login</li>
+        </ul>
+      </nav>
+      <div class="header-image">
+        <div class="header-writi">
+          <h1>Welcome,</h1>
+          <p>Lorem ipsum dolor sit amet consectetur Lorem, ipsum..</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="main-top">How it works</div>
+        <div class="main-mid">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, natus.
+        </div>
+        <div class="main-bottom">
+          <div class="main-bottom1">
+            <h1 class="fa fa-cloud"></h1>
+            <h2>Register</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit,
+              iste. Exercitationem vitae earum ab molestiae, possimus quod
+              libero praesentium, ut optio quaerat
+            </p>
+          </div>
+          <div class="main-bottom2">
+            <h1 class="fa fa-bars"></h1>
+            <h2>Choose a plan</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit,
+              iste. Exercitationem vitae earum ab molestiae, possimus quod
+              libero praesentium, ut optio quaerat
+            </p>
+          </div>
+          <div class="main-bottom3">
+            <h1 class="fa fa-heart"></h1>
+            <h2>Enjoy movies</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit,
+              iste. Exercitationem vitae earum ab molestiae, possimus quod
+              libero praesentium, ut optio quaerat
+            </p>
+          </div>
+        </div>
+        <div class="bottom-image"></div>
+        <div class="bottom-right">
+          <h1>Watch all movies And Tv shows</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur architecto quia libero nam. Harum, praesentium minima
+            sed et suscipit illo iusto veritatis, ducimus ad id tempore animi
+            error, modi sit!
+          </p>
+          <a href="">Wiew features</a>
+        </div>
+        <footer class="footer-top">
+          <div class="left"><h1>974 Movies</h1></div>
+          <div class="middle"><h1>456 Tvshows</h1></div>
+          <div class="right"><h1>976 Users</h1></div>
+        </footer>
+        <footer class="footer-bottom">
+          <h1>Trending Movies & Tv shows</h1>
+          <div class="footer-bottom-left">
+            <div class="footer-bottom-left-1"></div>
+            <div class="footer-bottom-left-2">
+              <h2>İnterstaller</h2>
+              <p>
+                Lorem ipsum dolor sit Eveniet veritatis eos placeat perspiciatis
+                reiciendis maiores quisquam maxime, nisi vero quas?
+              </p>
+              <input type="button" value="Details" class="button" />
+            </div>
+          </div>
+          <div class="footer-bottom-middle">
+            <div class="footer-bottom-middle-1"></div>
+            <div class="footer-bottom-middle-2">
+              <h2>Prestij</h2>
+              <p>
+                Lorem, ipsum dolor sit Consequatur temporibus suscipit
+                consequuntur officia deleniti dolorem necessitatibus.
+              </p>
+              <input type="button" value="Details" class="button" />
+            </div>
+          </div>
+          <div class="footer-bottom-right">
+            <div class="footer-bottom-right-1"></div>
+            <div class="footer-bottom-right-2">
+              <h2>Seinfield</h2>
+              <p>
+                Lorem ipsum dolor sit, Laboriosam, natus totam. Labore eaque
+                similique eius! Illum nobis ex optio commodi!
+              </p>
+              <input type="button" value="Details" class="button" />
+            </div>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
